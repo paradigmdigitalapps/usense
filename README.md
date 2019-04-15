@@ -27,3 +27,5 @@ The structure of the code is briefly described below.
 
 User input is sent to server storage with ajax function with help of http post transaction.
 
+Sample application is available here: http://www.usense.biz/
+
