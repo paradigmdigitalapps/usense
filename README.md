@@ -11,12 +11,12 @@ The news information is collected by a separate service and the result is loaded
 
 This code is uploaded and maintained in GitHub and available only for invited contributors.
 
-Overview of the applied technology framework:
-- Enviroment: Google Application Engine
-- Web application: Webapp2 / Paython2
-- DB: Google Datastore
-- Template handling: Jinja2
-- Font-end: Bootstrap3, CSS and Javasript
+Overview of the applied technology framework:<br/>
+- Enviroment: Google Application Engine<br/>
+- Web application: Webapp2 / Paython2<br/>
+- DB: Google Datastore<br/>
+- Template handling: Jinja2<br/>
+- Font-end: Bootstrap3, CSS and Javasript<br/>
 
 The structure of the code is briefly described below.
 
@@ -25,5 +25,5 @@ The structure of the code is briefly described below.
 ./js/ this is the folder of .js code
 ./img/ this is the folder of image resources
 
-User input is sent to server storage with ajax function, with help of http post transation.
+User input is sent to server storage with ajax function with help of http post transaction.
 
