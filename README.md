@@ -12,7 +12,7 @@ The news information is collected by a separate service and the result is loaded
 This code is uploaded and maintained in GitHub and available only for invited contributors.
 
 Overview of the applied technology framework: <br/>
-- Enviroment: Google Application Engine< br/>
+- Enviroment: Google Application Engine <br/>
 - Web application: Webapp2 / Paython2 <br/>
 - DB: Google Datastore <br/>
 - Template handling: Jinja2 <br/>
@@ -20,10 +20,10 @@ Overview of the applied technology framework: <br/>
 
 The structure of the code is briefly described below.
 
-./sd_vote.py server site applcation script written in Python br/>
-./template/ html code of the site, this is a one page design br/>
-./js/ this is the folder of .js code br/>
-./img/ this is the folder of image resources (is it applies) br/>
+./sd_vote.py server site applcation script written in Python <br/>
+./template/ html code of the site, this is a one page design <br/>
+./js/ this is the folder of .js code <br/>
+./img/ this is the folder of image resources (is it applies) <br/>
 
 User input is sent to server storage with ajax function with help of http post transaction.
 
