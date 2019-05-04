@@ -29,3 +29,17 @@ User input is sent to server storage with ajax function with help of http post t
 
 Sample application is available here: http://www.usense.biz/
 
+<<<<<<< HEAD
+=======
+
+Development server
+
+- First check the python version on your local machine
+- After checking the python version if version is not found then install python2.7 on your local machine and check python version
+- Next download the google-cloud-sdk zip file from https://cloud.google.com/appengine/docs/standard/python/tools/using-local-server
+- Extract the google-cloud-sdk zip file and save in any directory
+- open the terminal and enter the directory where you save google-cloud-sdk folder and run the following command ./google-cloud-sdk/install.sh
+- when this command execute run the following command ./google-cloud-sdk/bin/gcloud init
+- After go to your project folder and open the terminal and Running the local development server using following command: dev_appserver.py app.yaml  
+- When you run this command after enter the http://localhost:8080/ in your browser. Note (if you are use already a terminal then first stop yhis terminal) 
+>>>>>>> optimization-version-1
