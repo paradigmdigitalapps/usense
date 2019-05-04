@@ -13,11 +13,7 @@ handlers:
 
 # accept all calls and route them inside main python file
 - url: /.*
-<<<<<<< HEAD
-  script: usense.app
-=======
   script: views.app
->>>>>>> optimization-version-1
 
 # we use jinja2 templates to generate UI
 libraries:

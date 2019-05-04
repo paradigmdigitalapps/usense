@@ -29,8 +29,6 @@ User input is sent to server storage with ajax function with help of http post t
 
 Sample application is available here: http://www.usense.biz/
 
-<<<<<<< HEAD
-=======
 
 Development server
 
@@ -42,4 +40,3 @@ Development server
 - when this command execute run the following command ./google-cloud-sdk/bin/gcloud init
 - After go to your project folder and open the terminal and Running the local development server using following command: dev_appserver.py app.yaml  
 - When you run this command after enter the http://localhost:8080/ in your browser. Note (if you are use already a terminal then first stop yhis terminal) 
->>>>>>> optimization-version-1
