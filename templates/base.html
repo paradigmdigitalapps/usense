@@ -2,220 +2,80 @@
 <html>
 
 <head>
-    <title>uSense homepage</title>
+<title>uSense homepage</title>
 
-    <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#000000">
-    <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#000000">
-    <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#000000">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#000000">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#000000">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="./js/main.css">
-    <script type="text/javascript" src="./js/ajax_script.js"></script>
-    <script type="text/javascript" src="./js/validate.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="./js/main.css">
+<script type="text/javascript" src="./js/ajax_script.js"></script>
+<script type="text/javascript" src="./js/validate.js"></script>
 
-    <style>
-        body {
-            position: relative;
-        }
-
-        textarea {
-            max-width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-        }
-
-        .affix {
-            top: 0;
-            width: 100%;
-            z-index: 9999 !important;
-        }
-
-        .navbar {
-            margin-bottom: 0px;
-        }
-
-        .affix~.container-fluid {
-            position: relative;
-            top: 5 0px;
-        }
-
-        #section1 {
-            padding-top: 25px;
-            color: #fff;
-            background-color: #072642;
-        }
-
-        #section2 {
-            padding-top: 25px;
-            color: #fff;
-            background-color: #3817a5;
-        }
-
-        #section3 {
-            padding-top: 25px;
-            color: #fff;
-            background-color: #106499;
-        }
-
-        #report1 {
-            padding-top: 25px;
-            color: #fff;
-            background-color: #072642;
-        }
-
-        #report2 {
-            padding-top: 25px;
-            color: #fff;
-            background-color: #072642;
-        }
-
-        #section43 {
-            padding-top: 25px;
-            color: #fff;
-            background-color: #049109;
-        }
-
-
-        .list-group {
-            color: black;
-        }
-    </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-    <nav class="navbar navbar-inverse" data-spy="affix" navbar-fixed-top>
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <div class="navbar-brand">
-                    <a href="/">
-                        <button
-                            style="background-color: transparent;border-radius: 5px;border: 1px solid white;color: white">
-                            uSense
-                        </button>
-                    </a>
-                    {% if is_user_login %}
-                    <a href="/"><span style="color:white" class="glyphicon glyphicon-lock"></span></a>
-                    {% else %}
-                    <a href="/" style="color:white"><span style="color:white"
-                            class="glyphicon glyphicon-user"></span>?</a>
+<nav class="navbar navbar-inverse" data-spy="affix" navbar-fixed-top>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand">
+                <a href="/">
+                    <button
+                        style="background-color: transparent;border-radius: 5px;border: 1px solid white;color: white">
+                        uSense
+                    </button>
+                </a>
+                {% if is_user_login %}
+                <a href="/"><span style="color:white" class="glyphicon glyphicon-lock"></span></a>
+                {% else %}
+                <a href="/" style="color:white"><span style="color:white"
+                        class="glyphicon glyphicon-user"></span>?</a>
 
-                    {% endif %}
-                </div>
-            </div>
-            <div class="navigation-menu">
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/">degitalization</a></li>
-                        <li><a href="/information">information</a></li>
-                        <li><a href="/motivation">motivation</a></li>
-                       <!--  {% if is_user_login %}
-                        <li><a href="/report1">Report 1</a></li>
-                        <li><a href="/report2">Report 2</a></li>
-                        <li><a href="/MyProfile">My profile</a></li>
-                        {% endif %}
-                        <li><a href="{{ login_button_url|safe }}" style="color:orange">{{ login_button_text }}</a></li> -->
-                    </ul>
-                </div>
-
+                {% endif %}
             </div>
         </div>
-    </nav>
-    <div class="main-container">
-        <div class="container-fluid" style="background:#212121e0">
-            <div class="container">
-                <section class="common-section">
-                    <hgroup>
-                        <h1 class="heading">Mobile workforce management</h1>
-                        <h3 class="subheading" style="color: #fdb831;">Be smarter and more efficient</h3>
-                    </hgroup>
-                    <div class="details">
-                        <p>The service supports business decision makers in solving employee
-                            mobility opportunities and problems.</p>
-                        <p>For a quick understanding of the opportunities we give you ideas,
-                            we always look for new and better answers to your management issues.</p>
-                    </div>
-                </section>
+        <div class="navigation-menu">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">degitalization</a></li>
+                    <li><a href="/information">information</a></li>
+                    <li><a href="/motivation">motivation</a></li>
+                    <li><a href="about">About</a></li>
+                    {% if is_user_login %}
+                    <li><a href="/report1">Report 1</a></li>
+                    <li><a href="/report2">Report 2</a></li>
+                    <li><a href="/MyProfile">My profile</a></li>
+                    {% endif %}
+                    <li><a href="{{ login_button_url|safe }}" style="color:orange">{{ login_button_text }}</a></li>
+                </ul>
             </div>
+
         </div>
     </div>
+</nav>
+<div style="margin-top: 64px;">
+{% block detail %}
 
-    {% block content %}
+{% endblock %}
 
+{% block content %}
 
-    {% endblock %}
-
-    <script>
-        $(document).ready(function () {
-            $("#digitalization_js").on("keyup", function () {
-                var value = $(this).val().toLowerCase();
-                $("#digitalization_js li").filter(function () {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
-            $("#information_js").on("keyup", function () {
-                var value = $(this).val().toLowerCase();
-                $("#information_js li").filter(function () {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
-      
-            $("#motivation_js").on("keyup", function () {
-                var value = $(this).val().toLowerCase();
-                $("#motivation_js li").filter(function () {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
-        });
-
-        //create trigger to resizeEnd event     
-        $(window).resize(function () {
-            if (this.resizeTO) clearTimeout(this.resizeTO);
-            this.resizeTO = setTimeout(function () {
-                $(this).trigger('resizeEnd');
-            }, 500);
-        });
-
-        //redraw graph when window resize is completed  
-        $(window).on('resizeEnd', function () {
-            if ($('#chart_div1').length || $('#pie_chart').length) {
-                legend: { position: 'none' }
-                drawChart();
-            }
-
-        });
-
-        $("#myform").validate({
-          rules: {
-            country: {
-              required: true,
-            },
-            story: {
-              required: true,
-            },
-            keyword: {
-              required: true,
-            },
-            comment: {
-              required: true,
-            }                       
-          }
-        });
-
-    </script>
+{% endblock %}
+</div>
 </body>
-
 </html>

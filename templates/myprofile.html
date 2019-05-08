@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block detail %}
+
+{% endblock %}
+{% block content %}
+
+{% if is_user_login %}
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="./js/ajax_script.js"></script>
+
+<div id="section1" class="container-fluid mk-form">
+<div class="container section-padding">
+    <div class="form-container">
+        <h1 class="heading"><span class="heading-before">Which content did you like this week?</span></h1>
+        <form method="post" action="javascript:ajaxScript();" id="myform">
+            <div class="form-group">
+                <label for="country">Your leadership role</label>
+                <select id="country" name="country" class="form-control">
+                    <option value="Tulajdonos">Owner</option>
+                    <option value="Üzleti">Business</option>
+                    <option value="IT">IT</option>
+                    <option value="Egyéb">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fname">My favourite story</label>
+                <input type="text" id="story_tag" class="form-control" name="story" placeholder="Favourite Story">
+            </div>
+            <div class="form-group">
+                <label for="lname">My favourite keyword(s)</label>
+                <input type="text" id="keyword_tag" class="form-control" name="keyword" placeholder="Favourite Keyword">
+            </div>
+            <div class="form-group">
+                <label for="lname">Recommendations</label> <br>
+                <textarea cols=100% rows="8" id="comment_tag" class="form-control" name="comment" placeholder="Recommendations"></textarea>
+            </div>
+            <div class="form-group">
+                <p id="demo" style="color:blue;"></p>
+                <input type="submit" value="Submit" class="form-control">
+                <div id="error" style="color:red"></div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+{% endif %}
+
+<script type="text/javascript">
+
+$('.nav a').on('click', function () {
+    $('.btn-navbar').click(); //bootstrap 2.x
+    $('.navbar-toggle').click(); //bootstrap 3.x
+    $('.navbar-toggler').click(); //bootstrap 4.x
+});
+
+</script>
+<script>
+$("#myform").validate({
+      rules: {
+        country: {
+          required: true,
+        },
+        story: {
+          required: true,
+        },
+        keyword: {
+          required: true,
+        },
+        comment: {
+          required: true,
+        }                       
+      }
+    });
+</script>
+{% endblock %}

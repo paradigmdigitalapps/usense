@@ -1,35 +1,65 @@
 {% extends 'base.html' %}
-{% block content %}
-
-    <div id="section1" class="container-fluid">
-        <div class="container section-padding">
-            <h1 class="heading"><span class="heading-before">Digitalization</span></h1>
-            <div>
-               <div class="chip-tags">
-                <span>Keywords of this section:</span>
-                <div class="chip">digitális</div>
-                <div class="chip">lehetőség</div>
-                <div class="chip">szakmaiság</div>
-               </div> 
-            </div>
-
-            <input class="form-control input-search" id="digitalization_js" type="text" placeholder="Search..">
-            <ul class="list-group" id="digitalization_js">
-                {% for story in digitalization_list %}
-                    <li class="list-group-item"> 
-                        <div class="heading-panel" data-toggle="collapse" data-target="#digital-{{ loop.index }}">
-                        .:. {{ story.description | truncate(50) }}
-                        <i class="more-less glyphicon glyphicon-plus"></i>
-                        </div>
-                        <div id="digital-{{ loop.index }}" class="collapse out">
-                            <div class="body-panel">
-                                <p>  {{ story.description| truncate(300) }}  </p>
-                                <a href="{{ story.link }}" target="_blank"> see the website </a>                                
-                            </div>
-                        </div>
-                    </li>
-                {% endfor %}
-            </ul>            
+{% block detail %}
+<div class="main-container">
+    <div class="container-fluid" style="background:#212121e0">
+        <div class="container">
+            <section class="common-section">
+                <hgroup>
+                    <h1 class="heading">Mobile workforce management</h1>
+                    <h3 class="subheading" style="color: #fdb831;">Be smarter and more efficient</h3>
+                </hgroup>
+                <div class="details">
+                    <p>The service supports business decision makers in solving employee
+                        mobility opportunities and problems.</p>
+                    <p>For a quick understanding of the opportunities we give you ideas,
+                        we always look for new and better answers to your management issues.</p>
+                </div>
+            </section>
         </div>
     </div>
+</div>
+{% endblock %}
+{% block content %}
+
+<div id="section1" class="container-fluid">
+    <div class="container section-padding">
+        <h1 class="heading"><span class="heading-before">Digitalization</span></h1>
+        <div>
+           <div class="chip-tags">
+            <span>Keywords of this section:</span>
+            <div class="chip">digitális</div>
+            <div class="chip">lehetőség</div>
+            <div class="chip">szakmaiság</div>
+           </div> 
+        </div>
+
+        <input class="form-control input-search" id="digitalization_js" type="text" placeholder="Search..">
+        <ul class="list-group" id="digitalization_js">
+            {% for story in digitalization_list %}
+                <li class="list-group-item"> 
+                    <div class="heading-panel" data-toggle="collapse" data-target="#digital-{{ loop.index }}">
+                    .:. {{ story.description | truncate(50) }}
+                    <i class="more-less glyphicon glyphicon-plus"></i>
+                    </div>
+                    <div id="digital-{{ loop.index }}" class="collapse out">
+                        <div class="body-panel">
+                            <p>  {{ story.description| truncate(300) }}  </p>
+                            <a href="{{ story.link }}" target="_blank"> see the website </a>                                
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>            
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#digitalization_js").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#digitalization_js li").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
 {% endblock %}

@@ -3,8 +3,7 @@ import os
 import webapp2
 import jinja2
 import json
-
-from data_list import digitalization, information, motivation
+from models import DataList
 from google.appengine.api import users
 
 
@@ -61,6 +60,7 @@ class DigitalizationView(WebAppHandler):
 
     def get_template_values(self):
         template_values = super(DigitalizationView, self).get_template_values()
+        digitalization = DataList.query().filter(DataList.type_name == 'digitalization')
         template_values['digitalization_list'] = digitalization
         return template_values
 
@@ -70,6 +70,7 @@ class InformationView(WebAppHandler):
 
     def get_template_values(self):
         template_values = super(InformationView, self).get_template_values()
+        information = DataList.query().filter(DataList.type_name == 'information')
         template_values['information_list'] = information
         return template_values
 
@@ -79,10 +80,39 @@ class MotivationView(WebAppHandler):
 
     def get_template_values(self):
         template_values = super(MotivationView, self).get_template_values()
+        motivation = DataList.query().filter(DataList.type_name == 'motivation')
         template_values['motivation_list'] = motivation
         return template_values
 
+class About(WebAppHandler):
+    template_name='about.html'
 
+
+class Report1View(WebAppHandler):
+    template_name ='report1.html'
+
+
+class Report2View(WebAppHandler):
+    template_name = 'report2.html'
+
+
+class MyProfileView(WebAppHandler):
+    template_name ='myprofile.html'
+
+    def post(self):
+        data = json.loads(self.request.body)
+        story_tag = data["story_tag"]
+        keyword_tag = data["keyword_tag"]
+        comment_tag = data["comment_tag"]
+
+        if story_tag == "" or keyword_tag == "" or comment_tag == "":
+
+            message = "Please Fill all the fields"
+        else:
+
+            message = "Congratulations data successful created"
+
+        self.response.write(json.dumps({"message": message}))
 
 
 app = webapp2.WSGIApplication(
@@ -90,5 +120,9 @@ app = webapp2.WSGIApplication(
         ('/', DigitalizationView),
         ('/information', InformationView),
         ('/motivation', MotivationView),
+        ('/about', About),
+        ('/report1', Report1View),
+        ('/report2', Report2View),
+        ('/MyProfile', MyProfileView),
     ],
     debug=True)

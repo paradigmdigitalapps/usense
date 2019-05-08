@@ -23,9 +23,7 @@
 .navbar-brand {
     margin-top: 5px;
 }
-.main-container{
-    margin-top: 64px;
-}
+
 .common-section{
     color: #fff;
     padding: 50px 0;
@@ -227,3 +225,69 @@ input[type=submit]:hover{
         padding-right: 0;
     }
   }
+
+  body {
+            position: relative;
+        }
+
+        textarea {
+            max-width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+        }
+
+        .affix {
+            top: 0;
+            width: 100%;
+            z-index: 9999 !important;
+        }
+
+        .navbar {
+            margin-bottom: 0px;
+        }
+
+        .affix~.container-fluid {
+            position: relative;
+            top: 5 0px;
+        }
+
+        #section1 {
+            padding-top: 25px;
+            color: #fff;
+            background-color: #072642;
+        }
+
+        #section2 {
+            padding-top: 25px;
+            color: #fff;
+            background-color: #3817a5;
+        }
+
+        #section3 {
+            padding-top: 25px;
+            color: #fff;
+            background-color: #106499;
+        }
+
+        #report1 {
+            padding-top: 25px;
+            color: #fff;
+            background-color: #072642;
+        }
+
+        #report2 {
+            padding-top: 25px;
+            color: #fff;
+            background-color: #072642;
+        }
+
+        #section43 {
+            padding-top: 25px;
+            color: #fff;
+            background-color: #049109;
+        }
+
+
+        .list-group {
+            color: black;
+        }
