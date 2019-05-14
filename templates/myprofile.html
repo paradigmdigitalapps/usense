@@ -1,77 +1,72 @@
 {% extends "base.html" %}
-{% block detail %}
 
-{% endblock %}
+{% block title %} uSense MyProfile {% endblock %}
+
 {% block content %}
 
-{% if is_user_login %}
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript" src="./js/ajax_script.js"></script>
+    <div id="section1" class="usense-profile container-fluid mk-form usense-height">
+        <div class="container section-padding">
+            <div class="form-container">
+                <h4 class="raleway">Login with Account: {{user}}</h4>
+                <h1 class="heading"><span class="heading-before">Which content did you like this week?</span></h1>
+                <form method="post" action="" id="myform">
 
-<div id="section1" class="container-fluid mk-form">
-<div class="container section-padding">
-    <div class="form-container">
-        <h1 class="heading"><span class="heading-before">Which content did you like this week?</span></h1>
-        <form method="post" action="javascript:ajaxScript();" id="myform">
-            <div class="form-group">
-                <label for="country">Your leadership role</label>
-                <select id="country" name="country" class="form-control">
-                    <option value="Tulajdonos">Owner</option>
-                    <option value="Üzleti">Business</option>
-                    <option value="IT">IT</option>
-                    <option value="Egyéb">Other</option>
-                </select>
+                    {% if success_message %} 
+                        <h2 id="success-msg">{{ success_message }} </h2> 
+                    {% endif %}
+
+                    {% if form.errors %}
+                        <ul class="errors">
+                            {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+                                {% for error in field_errors %}
+                                    <li>{{ form[field_name].label }}: {{ error }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    <div class="form-group">
+                        {{ form.leadership_role.label }}
+                        <select id="country" name="country" class="form-control">
+                            <option value="Tulajdonos">Owner</option>
+                            <option value="Üzleti">Business</option>
+                            <option value="IT">IT</option>
+                            <option value="Egyéb">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        {{ form.story.label }}
+                        {{ form.story(class="form-control")}}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.keyword.label }}
+                        {{ form.keyword(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                         {{ form.comment.label }}
+                        {{ form.comment(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        <p id="demo"></p>
+                        <input type="submit" value="Submit" class="form-control">
+                        <div id="error"></div>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="fname">My favourite story</label>
-                <input type="text" id="story_tag" class="form-control" name="story" placeholder="Favourite Story">
-            </div>
-            <div class="form-group">
-                <label for="lname">My favourite keyword(s)</label>
-                <input type="text" id="keyword_tag" class="form-control" name="keyword" placeholder="Favourite Keyword">
-            </div>
-            <div class="form-group">
-                <label for="lname">Recommendations</label> <br>
-                <textarea cols=100% rows="8" id="comment_tag" class="form-control" name="comment" placeholder="Recommendations"></textarea>
-            </div>
-            <div class="form-group">
-                <p id="demo" style="color:blue;"></p>
-                <input type="submit" value="Submit" class="form-control">
-                <div id="error" style="color:red"></div>
-            </div>
-        </form>
+        </div>
     </div>
-</div>
-</div>
 
-{% endif %}
 
-<script type="text/javascript">
 
-$('.nav a').on('click', function () {
-    $('.btn-navbar').click(); //bootstrap 2.x
-    $('.navbar-toggle').click(); //bootstrap 3.x
-    $('.navbar-toggler').click(); //bootstrap 4.x
-});
+    <script type="text/javascript">
 
-</script>
-<script>
-$("#myform").validate({
-      rules: {
-        country: {
-          required: true,
-        },
-        story: {
-          required: true,
-        },
-        keyword: {
-          required: true,
-        },
-        comment: {
-          required: true,
-        }                       
-      }
-    });
-</script>
+        $('.nav a').on('click', function () {
+            $('.btn-navbar').click(); //bootstrap 2.x
+            $('.navbar-toggle').click(); //bootstrap 3.x
+            $('.navbar-toggler').click(); //bootstrap 4.x
+        });
+
+    </script>
 {% endblock %}

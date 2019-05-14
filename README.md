@@ -38,5 +38,6 @@ Development server
 - Extract the google-cloud-sdk zip file and save in any directory
 - open the terminal and enter the directory where you save google-cloud-sdk folder and run the following command ./google-cloud-sdk/install.sh
 - when this command execute run the following command ./google-cloud-sdk/bin/gcloud init
+- Run pip install -t lib -r requirements.txt
 - After go to your project folder and open the terminal and Running the local development server using following command: dev_appserver.py app.yaml  
 - When you run this command after enter the http://localhost:8080/ in your browser. Note (if you are use already a terminal then first stop yhis terminal) 
