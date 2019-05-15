@@ -12,3 +12,4 @@ class UserProfile(ndb.Model):
     story = ndb.StringProperty()
     keyword = ndb.StringProperty()
     comment = ndb.StringProperty()
+    user_email = ndb.StringProperty()

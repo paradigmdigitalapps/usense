@@ -109,10 +109,12 @@ class UserProfileView(WebAppHandler):
         return template_values
 
     def post(self):
+        user = users.get_current_user().email()
         form = ProfileForm(self.request.POST)
         success_message = ''
         if form.validate():
             profile = UserProfile(
+                user_email=user,
                 leadership_role=self.request.get('country'),
                 story=self.request.get('story'),
                 keyword=self.request.get('keyword'),

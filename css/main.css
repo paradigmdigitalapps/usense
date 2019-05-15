@@ -30,7 +30,8 @@ textarea {
     background-color: #072642;
     border-radius: 0;
     border: none;
-    min-height: 64px;
+    max-height: calc(100%);
+    overflow-y: auto;
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -293,6 +294,17 @@ input[type=text].input-search{
 @media only screen and (max-width: 767px){
     .about-us .heading{
         font-size: 45px;
+    }
+}
+@media only screen and (max-width: 400px){
+    .about-us .heading{
+        font-size: 36px;
+    }
+    .about-us .subheading{
+        font-size: 24px;
+    }    
+    .about-us .details{
+        font-size: 20px;
     }
 }
 
