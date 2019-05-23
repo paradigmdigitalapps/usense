@@ -1,3 +1,5 @@
+@import url("config.css");
+
 /*======== Common CSS =========*/
 body{
     position: relative;
@@ -27,7 +29,6 @@ textarea {
     top: 5 0px;
 }
 .navbar-inverse {
-    background-color: #072642;
     border-radius: 0;
     border: none;
     max-height: calc(100%);
@@ -41,14 +42,6 @@ textarea {
     line-height: 34px;
     text-transform: uppercase;
 }
-
-.navbar-inverse .navbar-nav>.active>a,
-.navbar-inverse .navbar-nav>.active>a:focus,
-.navbar-inverse .navbar-nav>.active>a:hover,
-.navbar-inverse .navbar-nav>li:hover a {
-    background: #212121;
-}
-
 .navbar-brand {
     margin-top: 5px;
 }
@@ -59,10 +52,6 @@ textarea {
 .navbar-inverse .navbar-toggle {
     border-color: #fff;
     border-radius: 0;
-}
-.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
-    background-color: #337ab7;
-    border-color: #337ab7;
 }
 .usense-logo button{
     background-color: transparent;
@@ -75,12 +64,6 @@ textarea {
 }
 .usense-logo .glyphicon{
     color:white;
-}
-.navbar-inverse .navbar-nav > li > a.usense-green{
-    color: #69ed44;
-}
-.navbar-inverse .navbar-nav > li > a.usense-orange{
-    color: orange;
 }
 
 @media (max-width: 991px) {
@@ -148,8 +131,7 @@ textarea {
     position: absolute;
     bottom: -10px;
     width: 100px;
-    height: 4px;
-    background: orange;      
+    height: 4px;   
 }
 .main-container{
     margin-top: 64px;
@@ -160,7 +142,6 @@ textarea {
 }
 #loading .fa-spin{
     font-size: 80px; 
-    color: red
 }
 .mt{
     margin-top: 64px;
@@ -205,7 +186,6 @@ input[type=text].input-search{
     font-size: 14px;
     line-height: 30px;
     border-radius: 20px;
-    background-color: #337ab7;
     margin: 2px;
     text-transform: capitalize;
 }
@@ -224,7 +204,6 @@ input[type=text].input-search{
     right: 15px;
 }
 .heading-panel[aria-expanded="true"]{
-    background-color: #31708f;
     color: #fff;
 }
 .heading-panel[aria-expanded="true"] .glyphicon-plus:before{
@@ -263,7 +242,6 @@ input[type=text].input-search{
 /*======== ABOUT US PAGE CSS=========*/
 
 .about-us .container-fluid{
-    background:#212121e0;
     display: flex;
     min-height: calc(100vh - 64px);    
 }
@@ -284,7 +262,6 @@ input[type=text].input-search{
 }
 
 .about-us .subheading{
-    color: #fdb831;
     font-size: 30px;
 }
 
@@ -313,7 +290,6 @@ input[type=text].input-search{
 #section2 {
     padding-top: 25px;
     color: #fff;
-    background-color: #3817a5;
 }
 
 /*======== MOTIVATION PAGE CSS=========*/
@@ -321,7 +297,6 @@ input[type=text].input-search{
 #section3 {
     padding-top: 25px;
     color: #fff;
-    background-color: #106499;
 }
 
 
@@ -330,7 +305,6 @@ input[type=text].input-search{
 #report1 {
     padding-top: 25px;
     color: #fff;
-    background-color: #072642e6;
 }
 .reports .heading{
     text-transform:capitalize;
@@ -341,7 +315,6 @@ input[type=text].input-search{
 #report2 {
     padding-top: 25px;
     color: #fff;
-    background-color: #072642e6;
 }
 #pie_chart{
     width: 100%;
@@ -352,7 +325,6 @@ input[type=text].input-search{
 #section1 {
     padding-top: 25px;
     color: #fff;
-    background-color: #072642e6;
 }
 .mk-form .heading{
     font-size: 24px;
@@ -378,7 +350,6 @@ textarea.form-control{
     box-shadow: none;
 }
 input[type=submit]{
-    background-color: #fba52f;
     color: #000;
     border-radius: 0;
     height: 40px;
@@ -388,9 +359,6 @@ input[type=submit]{
     cursor: pointer;
     text-transform: uppercase;
     font-weight: 700;     
-}
-input[type=submit]:hover{
-    background-color: #ffa529;
 }
 .form-group label{
     font-family: 'Raleway', sans-serif;
@@ -403,17 +371,7 @@ input[type=submit]:hover{
     margin-bottom: 20px;
 }
 .usense-profile .errors{
-    background: red;
     padding:10px 20px;
-}
-#demo{
-    color:blue;
-}
-#error{
-    color:red;
-}
-#success-msg {
-    color: #69ed44
 }
 @media only screen and (max-width: 600px){
     .usense-profile .heading-before::before{

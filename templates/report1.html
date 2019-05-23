@@ -19,20 +19,20 @@
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
                 ['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
-                ['munkaerő mobilitás', null, 0, 0],
-                ['Digitalizáció', 'munkaerő mobilitás', 0, 0],
-                ['Információ', 'munkaerő mobilitás', 0, 0],
-                ['Motiváció', 'munkaerő mobilitás', 0, 0],
-                ['digitális', 'Digitalizáció', 31, 20],
-                ['lehetőség', 'Digitalizáció', 52, 10],
-                ['szakmaiság', 'Digitalizáció', 34, 15],
-                ['tanácsadásnak', 'Információ', 22, 20],
-                ['befektetés', 'Információ', 31, 14],
-                ['információ', 'Információ', 22, 31],
-                ['képességek', 'Motiváció', 36, 20],
-                ['kreativitás', 'Motiváció', 20, 21],
-                ['növekedés', 'Motiváció', 40, 10],
-            ]);
+                {% for report in report_data %}
+                    [
+                    '{{ report.location}}',
+                        {% if report.parent != 'null' %} 
+                            '{{ report.parent}}'
+                        {% else %}
+                            {{ report.parent}}
+                        {% endif%},
+                        {{ report.size}},
+                        {{ report.color}}
+                    ],
+                {% endfor %}
+
+                ]);
             tree = new google.visualization.TreeMap(document.getElementById('chart_div1'));
             tree.draw(data, {
                 minColor: '#f00',
@@ -45,6 +45,7 @@
                 textTransform: 'capitalize'
             });
         }
+
         $(window).on('resizeEnd', function () {
                 if ($('#chart_div1').length) {
                     legend: { position: 'none' }
