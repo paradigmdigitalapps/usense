@@ -7,6 +7,7 @@ vendor.add('lib')
 # autofill initial data
 
 import csv
+import time
 import os
 from google.appengine.ext import ndb
 from models import DataList, UserDestribution, TopListWord
@@ -16,6 +17,7 @@ from models import DataList, UserDestribution, TopListWord
 # delete old data
 keys = DataList.query().fetch(keys_only=True)
 ndb.delete_multi(keys)
+time.sleep(5)
 
 
 with open('csv/data_list.csv') as csvfile:
