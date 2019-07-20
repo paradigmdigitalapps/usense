@@ -1,6 +1,7 @@
 runtime: python27
 api_version: 1
 threadsafe: yes
+service: test
 
 handlers:
   # static directory for javasript functions
@@ -17,6 +18,7 @@ handlers:
 # accept all calls and route them inside main python file
 - url: /.*
   script: views.app
+  secure: always
 
 # we use jinja2 templates to generate UI
 libraries:
