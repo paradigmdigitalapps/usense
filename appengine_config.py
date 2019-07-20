@@ -1,4 +1,3 @@
-# coding=utf-8
 # appengine_config.py
 from google.appengine.ext import vendor
 
@@ -8,7 +7,6 @@ vendor.add('lib')
 # autofill initial data
 
 import csv
-import time
 import os
 from google.appengine.ext import ndb
 from models import DataList, UserDestribution, TopListWord
@@ -18,16 +16,13 @@ from models import DataList, UserDestribution, TopListWord
 # delete old data
 keys = DataList.query().fetch(keys_only=True)
 ndb.delete_multi(keys)
-time.sleep(5)
 
-try:
-	with open('csv/data_list.csv') as csvfile:
-		csvread = csv.reader(csvfile, delimiter=',')
-		for row in csvread:
-			data_list = DataList(type_name=row[0], description= row[1].decode('iso-8859-1') , link=row[2])
-			data_list.put()
-except AssertionError as error:
-	print"error"
+
+with open('csv/data_list.csv') as csvfile:
+	csvread = csv.reader(csvfile, delimiter=',')
+	for row in csvread:
+		data_list = DataList(type_name=row[0], description= row[1], link=row[2])
+		data_list.put()
 
 ###################### End DataList  ########################
 

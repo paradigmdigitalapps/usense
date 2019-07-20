@@ -54,10 +54,10 @@
         <div class="navigation-menu">
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/">About</a></li>
-                    <li><a href="/digitalization">degitalization</a></li>
-                    <li><a href="/information">information</a></li>
-                    <li><a href="/motivation">motivation</a></li>
+                    <li><a href="/">/about</a></li>
+                    <li><a href="/digitalization">@digitalization</a></li>
+                    <li><a href="/information">@information</a></li>
+                    <li><a href="/motivation">@motivation</a></li>
                     {% if is_user_login %}
                         <li><a href="/report1" class="usense-green">Report 1</a></li>
                         <li><a href="/report2" class="usense-green">Report 2</a></li>
@@ -70,11 +70,17 @@
         </div>
     </div>
 </nav>
+
 <div class="mt">
     {% block content %}
-
     {% endblock %}
 </div>
+
+{% from 'socialbuttons.html' import socialbuttons %}
+
+{{ socialbuttons }}
+
+
 <script>
     window.addEventListener("load", function(){
         var load_screen = document.getElementById("load_screen");

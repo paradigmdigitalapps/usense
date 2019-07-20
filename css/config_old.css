@@ -1,6 +1,6 @@
 /*======== Common CSS =========*/
 .navbar-inverse {
-    background-color: grey;
+    background-color: #072642;
 }
 .navbar-inverse .navbar-nav>.active>a,
 .navbar-inverse .navbar-nav>.active>a:focus,
@@ -20,7 +20,7 @@
 }
 
 .heading-panel[aria-expanded="true"]{
-    background-color: blue;
+    background-color: #31708f;
 }
 .chip{
 	background-color: #337ab7;
@@ -49,7 +49,7 @@ input[type=submit]:hover{
 /*======== ABOUT US PAGE CSS=========*/
 
 .about-us .container-fluid{
-    background:green;   
+    background:#212121e0;   
 }
 .about-us .subheading{
     color: #fdb831;

@@ -11,8 +11,7 @@
         </h1>
         <div id="pie_chart"></div>
         <br>
-        <p>A szakterületek eloszlása mutatja, mennyire foglalkoztatja adott típusú vezetőket a 
-            munkaerő mobilitás.</p>
+        <p>How much of interest do the different type of decision makers have in workforce mobility?</p>
     </div>
     <script type="text/javascript">
 
@@ -29,9 +28,9 @@
             ]);
 
             var options = {
-                title: 'Milyen típusű vezetők érdeklődnek?',
-                fontSize: 18
-
+                'title': 'Who are using our service?',
+                'fontSize': 18,
+                'legend': 'bottom'
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('pie_chart'));
